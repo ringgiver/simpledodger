@@ -1,19 +1,18 @@
-﻿//Simple Dodger 권준혁 2018.2.5
-using UnityEngine;
+﻿using UnityEngine;
 
 public class move : MonoBehaviour {
 
-    public float speed = 5;
-    // public DirPad dirPad;
+    public float speed = 30;
+     public DirPad dirPad;
     public float movedPosition;
     void Update ()
     {
-       /* if (dirPad.dragging)
+       if (dirPad.dragging)
         {
-            var dn = dirPad.dir.normalized * Time.deltaTime; //단위 S벡터 변환
+            var dn = dirPad.dir.normalized * Time.deltaTime * speed; //단위 S벡터 변환
             transform.Translate(new Vector3(dn.x, 0, dn.y));
         }
-       else */
+       else 
         {
             var dx = Input.GetAxis("Horizontal") * Time.deltaTime * speed;
             var dz = Input.GetAxis("Vertical") * Time.deltaTime * speed;
